@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Voxtral
+Comment=Voice transcription with Voxtral AI
+Exec=/path/to/voxtral/voxtral_toggle.sh
+Icon=voxtral
+Terminal=false
+Type=Application
+Categories=Audio;Utility;
+Keywords=voice;transcription;speech;ai;

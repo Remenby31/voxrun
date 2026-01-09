@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
-"""Interactive CLI for Voxtral Mini 3B model."""
+"""Interactive CLI for Voxrun Mini 3B model."""
 
 import argparse
 import sys
 import torch
-from transformers import VoxtralForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
+from transformers import VoxrunForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
 
 # Global model and processor
 model = None
 processor = None
 
 def load_model():
-    """Load the Voxtral model."""
+    """Load the Voxrun model."""
     global model, processor
 
-    print("Loading Voxtral Mini 3B...")
-    repo_id = "mistralai/Voxtral-Mini-3B-2507"
+    print("Loading Voxrun Mini 3B...")
+    repo_id = "mistralai/Voxrun-Mini-3B-2507"
 
     processor = AutoProcessor.from_pretrained(repo_id)
 
@@ -26,7 +26,7 @@ def load_model():
         bnb_4bit_quant_type="nf4"
     )
 
-    model = VoxtralForConditionalGeneration.from_pretrained(
+    model = VoxrunForConditionalGeneration.from_pretrained(
         repo_id,
         quantization_config=quantization_config,
         device_map="auto"
@@ -82,7 +82,7 @@ def chat(text: str) -> str:
 
 def interactive_mode():
     """Run interactive session."""
-    print("\n=== Voxtral Interactive Mode ===")
+    print("\n=== Voxrun Interactive Mode ===")
     print("Commands:")
     print("  /audio <path> [prompt]  - Analyze audio file")
     print("  /quit                   - Exit")
@@ -123,7 +123,7 @@ def interactive_mode():
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Voxtral Mini 3B CLI")
+    parser = argparse.ArgumentParser(description="Voxrun Mini 3B CLI")
     parser.add_argument("--audio", "-a", help="Audio file to transcribe/analyze")
     parser.add_argument("--prompt", "-p", default="Transcribe this audio.",
                         help="Prompt for audio analysis")

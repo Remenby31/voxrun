@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Transcribe audio file with Voxtral - designed for quick invocation."""
+"""Transcribe audio file with Voxrun - designed for quick invocation."""
 
 import sys
 import os
@@ -9,12 +9,12 @@ os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 import torch
-from transformers import VoxtralForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
+from transformers import VoxrunForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
 import warnings
 warnings.filterwarnings("ignore")
 
 def transcribe(audio_path: str) -> str:
-    repo_id = "mistralai/Voxtral-Mini-3B-2507"
+    repo_id = "mistralai/Voxrun-Mini-3B-2507"
 
     processor = AutoProcessor.from_pretrained(repo_id)
 
@@ -25,7 +25,7 @@ def transcribe(audio_path: str) -> str:
         bnb_4bit_quant_type="nf4"
     )
 
-    model = VoxtralForConditionalGeneration.from_pretrained(
+    model = VoxrunForConditionalGeneration.from_pretrained(
         repo_id,
         quantization_config=quantization_config,
         device_map="auto"
@@ -55,7 +55,7 @@ def transcribe(audio_path: str) -> str:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: voxtral_transcribe.py <audio_file>", file=sys.stderr)
+        print("Usage: voxrun_transcribe.py <audio_file>", file=sys.stderr)
         sys.exit(1)
 
     audio_file = sys.argv[1]

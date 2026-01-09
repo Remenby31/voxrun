@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Voxtral
-Comment=Voice transcription with Voxtral AI
-Exec=/path/to/voxtral/voxtral_toggle.sh
-Icon=voxtral
+Name=Voxrun
+Comment=Voice transcription with Voxrun AI
+Exec=/path/to/voxrun/voxrun_toggle.sh
+Icon=voxrun
 Terminal=false
 Type=Application
 Categories=Audio;Utility;

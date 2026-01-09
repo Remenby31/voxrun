@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="voxtral.svg" alt="Voxtral Logo" width="120">
+  <img src="voxrun.svg" alt="Voxrun Logo" width="120">
 </p>
 
-<h1 align="center">Voxtral</h1>
+<h1 align="center">Voxrun</h1>
 
 <p align="center">
   <strong>Voice-controlled local AI assistant</strong>
@@ -14,12 +14,12 @@
 
 ---
 
-## What is Voxtral?
+## What is Voxrun?
 
-Voxtral is a **voice entry point** for controlling your computer and launching AI agents locally. No cloud, no API keys, everything runs on your machine.
+Voxrun is a **voice entry point** for controlling your computer and launching AI agents locally. No cloud, no API keys, everything runs on your machine.
 
 **Examples:**
-- *"Launch Claude Code on the voxtral project and fix the login bug"*
+- *"Launch Claude Code on the voxrun project and fix the login bug"*
 - *"Start a Mistral agent to review my pull request"*
 - *"Open Firefox and search for PyTorch documentation"*
 - *"Run the tests in the backend folder"*
@@ -28,7 +28,7 @@ Voxtral is a **voice entry point** for controlling your computer and launching A
 
 - **Voice-to-action** - Speak commands, execute actions
 - **Agent launcher** - Start Claude Code, Mistral, or custom AI agents
-- **Fully local** - Powered by Voxtral Mini 3B, runs on your GPU
+- **Fully local** - Powered by Voxrun Mini 3B, runs on your GPU
 - **Low VRAM** - ~3.3 GB with 4-bit quantization
 - **Wayland native** - Modern overlay UI with layer-shell
 
@@ -43,8 +43,8 @@ Voxtral is a **voice entry point** for controlling your computer and launching A
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USERNAME/voxtral.git
-cd voxtral
+git clone https://github.com/YOUR_USERNAME/voxrun.git
+cd voxrun
 
 # System dependencies (Arch Linux)
 sudo pacman -S python gtk4-layer-shell wl-clipboard
@@ -56,15 +56,15 @@ pip install -r requirements.txt
 
 # Install desktop entry
 mkdir -p ~/.local/share/icons/hicolor/scalable/apps
-cp voxtral.svg ~/.local/share/icons/hicolor/scalable/apps/
-cp voxtral.desktop ~/.local/share/applications/
+cp voxrun.svg ~/.local/share/icons/hicolor/scalable/apps/
+cp voxrun.desktop ~/.local/share/applications/
 ```
 
 ### Configure hotkey (KDE Plasma)
 
 1. **System Settings** → **Shortcuts** → **Custom Shortcuts**
 2. New → Global Shortcut → Command/URL
-3. Set trigger (e.g., `Meta+V`) and action: `/path/to/voxtral/voxtral_toggle.sh`
+3. Set trigger (e.g., `Meta+V`) and action: `/path/to/voxrun/voxrun_toggle.sh`
 
 ## Usage
 
@@ -89,7 +89,7 @@ cp voxtral.desktop ~/.local/share/applications/
 
 ## Tech Stack
 
-- [Voxtral Mini 3B](https://huggingface.co/mistralai/Voxtral-Mini-3B-2507) - Mistral AI
+- [Voxrun Mini 3B](https://huggingface.co/mistralai/Voxrun-Mini-3B-2507) - Mistral AI
 - [GTK4 + layer-shell](https://github.com/wmww/gtk4-layer-shell) - Wayland overlay
 - [bitsandbytes](https://github.com/TimDettmers/bitsandbytes) - 4-bit quantization
 

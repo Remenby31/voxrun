@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Modern minimal overlay for Voxtral - layer-shell for proper positioning."""
+"""Modern minimal overlay for Voxrun - layer-shell for proper positioning."""
 
 import sys
 import os
@@ -43,7 +43,7 @@ window {
 """
 
 
-class VoxtralOverlay(Gtk.Application):
+class VoxrunOverlay(Gtk.Application):
     def __init__(self, text: str, status: str = "result", duration: int = 5000):
         super().__init__(application_id=None)
         self.text = text
@@ -120,14 +120,14 @@ class VoxtralOverlay(Gtk.Application):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: voxtral_overlay.py <text> [status] [duration_ms]")
+        print("Usage: voxrun_overlay.py <text> [status] [duration_ms]")
         sys.exit(1)
 
     text = sys.argv[1]
     status = sys.argv[2] if len(sys.argv) > 2 else "result"
     duration = int(sys.argv[3]) if len(sys.argv) > 3 else 5000
 
-    app = VoxtralOverlay(text, status, duration)
+    app = VoxrunOverlay(text, status, duration)
     app.run([])
 
 

@@ -1,17 +1,17 @@
 #!/bin/bash
-# Voxtral Voice Toggle - Press hotkey to start recording, press again to transcribe
+# Voxrun Voice Toggle - Press hotkey to start recording, press again to transcribe
 
-VOXTRAL_DIR="/home/remenby/projects/voxtral"
+VOXTRAL_DIR="/home/remenby/projects/voxrun"
 PYTHON="$VOXTRAL_DIR/venv/bin/python"
-LOCKFILE="/tmp/voxtral_recording.lock"
-AUDIOFILE="/tmp/voxtral_audio.wav"
-TRANSCRIBE_SCRIPT="$VOXTRAL_DIR/voxtral_transcribe.py"
-OVERLAY_SCRIPT="$VOXTRAL_DIR/voxtral_overlay.py"
+LOCKFILE="/tmp/voxrun_recording.lock"
+AUDIOFILE="/tmp/voxrun_audio.wav"
+TRANSCRIBE_SCRIPT="$VOXTRAL_DIR/voxrun_transcribe.py"
+OVERLAY_SCRIPT="$VOXTRAL_DIR/voxrun_overlay.py"
 
 export LD_PRELOAD=/usr/lib/libgtk4-layer-shell.so
 
 # Kill any existing overlay
-pkill -f "voxtral_overlay.py" 2>/dev/null
+pkill -f "voxrun_overlay.py" 2>/dev/null
 
 if [ -f "$LOCKFILE" ]; then
     # Stop recording
@@ -28,7 +28,7 @@ if [ -f "$LOCKFILE" ]; then
 
     # Kill processing overlay
     kill $OVERLAY_PID 2>/dev/null
-    pkill -f "voxtral_overlay.py" 2>/dev/null
+    pkill -f "voxrun_overlay.py" 2>/dev/null
 
     if [ -n "$RESULT" ]; then
         # Copy to clipboard
